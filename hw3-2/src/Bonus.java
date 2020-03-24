@@ -4,24 +4,18 @@ import java.util.Scanner;
 public class Bonus {
 
     public static void main(String[] args) {
-        Scanner vvod = new Scanner(System.in);
-        int RechargeAmount;
-        final int StartAccount = 100;
-        int CurrentAccount;
-        int Bonuss;
+        Scanner input = new Scanner(System.in);
         System.out.print("Введите сумму пополнения счета: ");
-        RechargeAmount = vvod.nextInt();
-        if (RechargeAmount >= 1000)
-        {
-            Bonuss =  ( RechargeAmount / 100);
+        int rechargeAmount = input.nextInt();
+        int bonuss;
+        if (rechargeAmount >= 1000) {
+            bonuss = (rechargeAmount / 100);
+        } else {
+            bonuss = 0;
         }
-        else
-        {
-            Bonuss = 0;
-        }
-        System.out.print("Число бонесов, которое Вам начислено: " + Bonuss);
-
-        CurrentAccount = StartAccount + RechargeAmount + Bonuss;
+        System.out.print("Число бонесов, которое Вам начислено: " + bonuss);
+        final int startAccount = 100;
+        int currentAccount = startAccount + rechargeAmount + bonuss;
         // System.out.print(". Ваш текущий счет: " + CurrentAccount);
     }
 }
